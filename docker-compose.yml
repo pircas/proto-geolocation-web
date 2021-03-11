@@ -1,0 +1,15 @@
+version: "3"
+services:
+  website:
+    image: "pirca/geolocation"
+    container_name: "geolocation"
+    build: .
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src/
+      - ./public:/app/public/
+      - ./package.json:/app/package.json
+      - ./package-lock.json:/app/package-lock.json
